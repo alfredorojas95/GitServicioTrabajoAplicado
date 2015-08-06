@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://serviciosueldo" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://serviciosueldo" xmlns:intf="http://serviciosueldo" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://serviciosueldo" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="registrarSueldoProf">
+    <complexType>
+     <sequence>
+      <element name="rutProf" type="xsd:string"/>
+      <element name="rutAdm" type="xsd:string"/>
+      <element name="mes" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="registrarSueldoProfResponse">
+    <complexType>
+     <sequence>
+      <element name="registrarSueldoProfReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="consSueldoProf">
+    <complexType>
+     <sequence>
+      <element name="rutProf" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="consSueldoProfResponse">
+    <complexType>
+     <sequence>
+      <element name="consSueldoProfReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="registrarSueldoProfRequest">
+
+      <wsdl:part element="impl:registrarSueldoProf" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="consSueldoProfRequest">
+
+      <wsdl:part element="impl:consSueldoProf" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="registrarSueldoProfResponse">
+
+      <wsdl:part element="impl:registrarSueldoProfResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="consSueldoProfResponse">
+
+      <wsdl:part element="impl:consSueldoProfResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="ServicioSueldo">
+
+      <wsdl:operation name="registrarSueldoProf">
+
+         <wsdl:input message="impl:registrarSueldoProfRequest" name="registrarSueldoProfRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:registrarSueldoProfResponse" name="registrarSueldoProfResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="consSueldoProf">
+
+         <wsdl:input message="impl:consSueldoProfRequest" name="consSueldoProfRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:consSueldoProfResponse" name="consSueldoProfResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="ServicioSueldoSoapBinding" type="impl:ServicioSueldo">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="registrarSueldoProf">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="registrarSueldoProfRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="registrarSueldoProfResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="consSueldoProf">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="consSueldoProfRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="consSueldoProfResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="ServicioSueldoService">
+
+      <wsdl:port binding="impl:ServicioSueldoSoapBinding" name="ServicioSueldo">
+
+         <wsdlsoap:address location="http://localhost:8080/ServicioTrabajoAplicado/services/ServicioSueldo"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

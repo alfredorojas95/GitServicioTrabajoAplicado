@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from ServicioSueldoService WSDL service -->
+
+  <service name="ServicioSueldo" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://serviciosueldo"/>
+      <parameter name="wsdlServiceElement" value="ServicioSueldoService"/>
+      <parameter name="schemaQualified" value="http://serviciosueldo"/>
+      <parameter name="wsdlServicePort" value="ServicioSueldo"/>
+      <parameter name="className" value="serviciosueldo.ServicioSueldo"/>
+      <parameter name="wsdlPortType" value="ServicioSueldo"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://serviciosueldo" xmlns:retNS="http://serviciosueldo" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="registrarSueldoProf" qname="operNS:registrarSueldoProf" returnQName="retNS:registrarSueldoProfReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://serviciosueldo" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:rutProf" type="tns:string"/>
+        <parameter xmlns:pns="http://serviciosueldo" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:rutAdm" type="tns:string"/>
+        <parameter xmlns:pns="http://serviciosueldo" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:mes" type="tns:int"/>
+      </operation>
+      <operation xmlns:operNS="http://serviciosueldo" xmlns:retNS="http://serviciosueldo" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="consSueldoProf" qname="operNS:consSueldoProf" returnQName="retNS:consSueldoProfReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://serviciosueldo" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:rutProf" type="tns:string"/>
+      </operation>
+      <parameter name="allowedMethods" value="registrarSueldoProf consSueldoProf"/>
+
+  </service>
+</deployment>
