@@ -20,12 +20,12 @@
       <parameter name="className" value="serviciomensualidad.ServicioMensualidadSoapBindingImpl"/>
       <parameter name="wsdlPortType" value="ServicioMensualidad"/>
       <parameter name="typeMappingVersion" value="1.2"/>
-      <operation name="regPagoMensualidad" qname="operNS:regPagoMensualidad" xmlns:operNS="http://serviciomensualidad" returnQName="retNS:regPagoMensualidadReturn" xmlns:retNS="http://serviciomensualidad" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
-        <parameter qname="pns:rutSc" xmlns:pns="http://serviciomensualidad" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
-        <parameter qname="pns:rutEs" xmlns:pns="http://serviciomensualidad" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      <operation name="obtenerListMorososMensualidad" qname="operNS:obtenerListMorososMensualidad" xmlns:operNS="http://serviciomensualidad" returnQName="retNS:obtenerListMorososMensualidadReturn" xmlns:retNS="http://serviciomensualidad" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
         <parameter qname="pns:mes" xmlns:pns="http://serviciomensualidad" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
       </operation>
-      <operation name="obtenerListMorososMensualidad" qname="operNS:obtenerListMorososMensualidad" xmlns:operNS="http://serviciomensualidad" returnQName="retNS:obtenerListMorososMensualidadReturn" xmlns:retNS="http://serviciomensualidad" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      <operation name="regPagoMensualidad" qname="operNS:regPagoMensualidad" xmlns:operNS="http://serviciomensualidad" returnQName="retNS:regPagoMensualidadReturn" xmlns:retNS="http://serviciomensualidad" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:rutEs" xmlns:pns="http://serviciomensualidad" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:rutSc" xmlns:pns="http://serviciomensualidad" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
         <parameter qname="pns:mes" xmlns:pns="http://serviciomensualidad" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
       </operation>
       <parameter name="allowedMethods" value="obtenerListMorososMensualidad regPagoMensualidad"/>

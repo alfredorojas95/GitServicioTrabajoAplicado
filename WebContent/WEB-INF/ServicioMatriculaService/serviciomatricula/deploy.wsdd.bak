@@ -20,11 +20,11 @@
       <parameter name="className" value="serviciomatricula.ServicioMatriculaSoapBindingImpl"/>
       <parameter name="wsdlPortType" value="ServicioMatricula"/>
       <parameter name="typeMappingVersion" value="1.2"/>
-      <operation name="obtenerListMorososMatricula" qname="operNS:obtenerListMorososMatricula" xmlns:operNS="http://serviciomatricula" returnQName="retNS:obtenerListMorososMatriculaReturn" xmlns:retNS="http://serviciomatricula" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
-      </operation>
       <operation name="pagarMatricula" qname="operNS:pagarMatricula" xmlns:operNS="http://serviciomatricula" returnQName="retNS:pagarMatriculaReturn" xmlns:retNS="http://serviciomatricula" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
         <parameter qname="pns:rutEstudiante" xmlns:pns="http://serviciomatricula" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
         <parameter qname="pns:rutSecretaria" xmlns:pns="http://serviciomatricula" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="obtenerListMorososMatricula" qname="operNS:obtenerListMorososMatricula" xmlns:operNS="http://serviciomatricula" returnQName="retNS:obtenerListMorososMatriculaReturn" xmlns:retNS="http://serviciomatricula" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
       </operation>
       <parameter name="allowedMethods" value="obtenerListMorososMatricula pagarMatricula"/>
 

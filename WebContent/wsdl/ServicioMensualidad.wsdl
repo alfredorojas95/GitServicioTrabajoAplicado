@@ -4,22 +4,6 @@
 Built on Apr 22, 2006 (06:55:48 PDT)-->
  <wsdl:types>
   <schema elementFormDefault="qualified" targetNamespace="http://serviciomensualidad" xmlns="http://www.w3.org/2001/XMLSchema">
-   <element name="regPagoMensualidad">
-    <complexType>
-     <sequence>
-      <element name="rutSc" type="xsd:string"/>
-      <element name="rutEs" type="xsd:string"/>
-      <element name="mes" type="xsd:int"/>
-     </sequence>
-    </complexType>
-   </element>
-   <element name="regPagoMensualidadResponse">
-    <complexType>
-     <sequence>
-      <element name="regPagoMensualidadReturn" type="xsd:string"/>
-     </sequence>
-    </complexType>
-   </element>
    <element name="obtenerListMorososMensualidad">
     <complexType>
      <sequence>
@@ -34,20 +18,36 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
      </sequence>
     </complexType>
    </element>
+   <element name="regPagoMensualidad">
+    <complexType>
+     <sequence>
+      <element name="rutEs" type="xsd:string"/>
+      <element name="rutSc" type="xsd:string"/>
+      <element name="mes" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="regPagoMensualidadResponse">
+    <complexType>
+     <sequence>
+      <element name="regPagoMensualidadReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
   </schema>
  </wsdl:types>
 
-   <wsdl:message name="regPagoMensualidadResponse">
+   <wsdl:message name="obtenerListMorososMensualidadResponse">
 
-      <wsdl:part element="impl:regPagoMensualidadResponse" name="parameters">
+      <wsdl:part element="impl:obtenerListMorososMensualidadResponse" name="parameters">
 
       </wsdl:part>
 
    </wsdl:message>
 
-   <wsdl:message name="obtenerListMorososMensualidadResponse">
+   <wsdl:message name="regPagoMensualidadResponse">
 
-      <wsdl:part element="impl:obtenerListMorososMensualidadResponse" name="parameters">
+      <wsdl:part element="impl:regPagoMensualidadResponse" name="parameters">
 
       </wsdl:part>
 
@@ -71,18 +71,6 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    <wsdl:portType name="ServicioMensualidad">
 
-      <wsdl:operation name="regPagoMensualidad">
-
-         <wsdl:input message="impl:regPagoMensualidadRequest" name="regPagoMensualidadRequest">
-
-       </wsdl:input>
-
-         <wsdl:output message="impl:regPagoMensualidadResponse" name="regPagoMensualidadResponse">
-
-       </wsdl:output>
-
-      </wsdl:operation>
-
       <wsdl:operation name="obtenerListMorososMensualidad">
 
          <wsdl:input message="impl:obtenerListMorososMensualidadRequest" name="obtenerListMorososMensualidadRequest">
@@ -95,29 +83,23 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
+      <wsdl:operation name="regPagoMensualidad">
+
+         <wsdl:input message="impl:regPagoMensualidadRequest" name="regPagoMensualidadRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:regPagoMensualidadResponse" name="regPagoMensualidadResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
    </wsdl:portType>
 
    <wsdl:binding name="ServicioMensualidadSoapBinding" type="impl:ServicioMensualidad">
 
       <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
-
-      <wsdl:operation name="regPagoMensualidad">
-
-         <wsdlsoap:operation soapAction=""/>
-
-         <wsdl:input name="regPagoMensualidadRequest">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:input>
-
-         <wsdl:output name="regPagoMensualidadResponse">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:output>
-
-      </wsdl:operation>
 
       <wsdl:operation name="obtenerListMorososMensualidad">
 
@@ -130,6 +112,24 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
          </wsdl:input>
 
          <wsdl:output name="obtenerListMorososMensualidadResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="regPagoMensualidad">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="regPagoMensualidadRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="regPagoMensualidadResponse">
 
             <wsdlsoap:body use="literal"/>
 

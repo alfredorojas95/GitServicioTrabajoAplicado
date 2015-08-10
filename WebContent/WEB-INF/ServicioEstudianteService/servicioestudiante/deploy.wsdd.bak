@@ -20,10 +20,13 @@
       <parameter name="className" value="servicioestudiante.ServicioEstudianteSoapBindingImpl"/>
       <parameter name="wsdlPortType" value="ServicioEstudiante"/>
       <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="buscarEst" qname="operNS:buscarEst" xmlns:operNS="http://servicioestudiante" returnQName="retNS:buscarEstReturn" xmlns:retNS="http://servicioestudiante" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:rutEst" xmlns:pns="http://servicioestudiante" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
       <operation name="obtenerSituacionEstudiante" qname="operNS:obtenerSituacionEstudiante" xmlns:operNS="http://servicioestudiante" returnQName="retNS:obtenerSituacionEstudianteReturn" xmlns:retNS="http://servicioestudiante" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
         <parameter qname="pns:rutEstudiante" xmlns:pns="http://servicioestudiante" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
       </operation>
-      <parameter name="allowedMethods" value="obtenerSituacionEstudiante"/>
+      <parameter name="allowedMethods" value="obtenerSituacionEstudiante buscarEst"/>
 
   </service>
 </deployment>

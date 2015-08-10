@@ -17,4 +17,13 @@ public class ServicioEstudiante {
 		return Estudiante.obtenerSituacionEstudiante(rutEstudiante);
 	}
 	
+	/**
+	 * este método buusca a un estudiante con su rut
+	 * @param rutEst
+	 * @return
+	 */
+	public String[] buscarEst(String rutEst){
+		return Estudiante.buscarEstudiate(rutEst);
+	}
+	
 }

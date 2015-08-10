@@ -4,6 +4,20 @@
 Built on Apr 22, 2006 (06:55:48 PDT)-->
  <wsdl:types>
   <schema elementFormDefault="qualified" targetNamespace="http://servicioestudiante" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="buscarEst">
+    <complexType>
+     <sequence>
+      <element name="rutEst" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="buscarEstResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="buscarEstReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
    <element name="obtenerSituacionEstudiante">
     <complexType>
      <sequence>
@@ -21,9 +35,25 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
   </schema>
  </wsdl:types>
 
+   <wsdl:message name="buscarEstResponse">
+
+      <wsdl:part element="impl:buscarEstResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
    <wsdl:message name="obtenerSituacionEstudianteResponse">
 
       <wsdl:part element="impl:obtenerSituacionEstudianteResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="buscarEstRequest">
+
+      <wsdl:part element="impl:buscarEst" name="parameters">
 
       </wsdl:part>
 
@@ -38,6 +68,18 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
    </wsdl:message>
 
    <wsdl:portType name="ServicioEstudiante">
+
+      <wsdl:operation name="buscarEst">
+
+         <wsdl:input message="impl:buscarEstRequest" name="buscarEstRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:buscarEstResponse" name="buscarEstResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
 
       <wsdl:operation name="obtenerSituacionEstudiante">
 
@@ -56,6 +98,24 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
    <wsdl:binding name="ServicioEstudianteSoapBinding" type="impl:ServicioEstudiante">
 
       <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="buscarEst">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="buscarEstRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="buscarEstResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
 
       <wsdl:operation name="obtenerSituacionEstudiante">
 

@@ -10,15 +10,15 @@
       <parameter name="className" value="serviciosueldo.ServicioSueldo"/>
       <parameter name="wsdlPortType" value="ServicioSueldo"/>
       <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://serviciosueldo" xmlns:retNS="http://serviciosueldo" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="consSueldoProf" qname="operNS:consSueldoProf" returnQName="retNS:consSueldoProfReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://serviciosueldo" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:rutProf" type="tns:string"/>
+      </operation>
       <operation xmlns:operNS="http://serviciosueldo" xmlns:retNS="http://serviciosueldo" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="registrarSueldoProf" qname="operNS:registrarSueldoProf" returnQName="retNS:registrarSueldoProfReturn" returnType="rtns:string" soapAction="">
         <parameter xmlns:pns="http://serviciosueldo" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:rutProf" type="tns:string"/>
         <parameter xmlns:pns="http://serviciosueldo" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:rutAdm" type="tns:string"/>
         <parameter xmlns:pns="http://serviciosueldo" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:mes" type="tns:int"/>
       </operation>
-      <operation xmlns:operNS="http://serviciosueldo" xmlns:retNS="http://serviciosueldo" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="consSueldoProf" qname="operNS:consSueldoProf" returnQName="retNS:consSueldoProfReturn" returnType="rtns:string" soapAction="">
-        <parameter xmlns:pns="http://serviciosueldo" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:rutProf" type="tns:string"/>
-      </operation>
-      <parameter name="allowedMethods" value="registrarSueldoProf consSueldoProf"/>
+      <parameter name="allowedMethods" value="consSueldoProf registrarSueldoProf"/>
 
   </service>
 </deployment>

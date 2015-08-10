@@ -15,8 +15,8 @@ public class ServicioMensualidad {
 	 * @param mes
 	 * @return
 	 */
-	public String regPagoMensualidad(String rutSc, String rutEs, int mes){
-		return Mensualidad.regPagoMensualidad(rutSc,rutEs,mes);
+	public String regPagoMensualidad(String rutEs, String rutSc, int mes){
+		return Mensualidad.regPagoMensualidad(rutEs,rutSc,mes);
 	}
 	
 	/**

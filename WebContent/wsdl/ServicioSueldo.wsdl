@@ -4,6 +4,20 @@
 Built on Apr 22, 2006 (06:55:48 PDT)-->
  <wsdl:types>
   <schema elementFormDefault="qualified" targetNamespace="http://serviciosueldo" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="consSueldoProf">
+    <complexType>
+     <sequence>
+      <element name="rutProf" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="consSueldoProfResponse">
+    <complexType>
+     <sequence>
+      <element name="consSueldoProfReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
    <element name="registrarSueldoProf">
     <complexType>
      <sequence>
@@ -17,20 +31,6 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
     <complexType>
      <sequence>
       <element name="registrarSueldoProfReturn" type="xsd:string"/>
-     </sequence>
-    </complexType>
-   </element>
-   <element name="consSueldoProf">
-    <complexType>
-     <sequence>
-      <element name="rutProf" type="xsd:string"/>
-     </sequence>
-    </complexType>
-   </element>
-   <element name="consSueldoProfResponse">
-    <complexType>
-     <sequence>
-      <element name="consSueldoProfReturn" type="xsd:string"/>
      </sequence>
     </complexType>
    </element>
@@ -53,14 +53,6 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    </wsdl:message>
 
-   <wsdl:message name="registrarSueldoProfResponse">
-
-      <wsdl:part element="impl:registrarSueldoProfResponse" name="parameters">
-
-      </wsdl:part>
-
-   </wsdl:message>
-
    <wsdl:message name="consSueldoProfResponse">
 
       <wsdl:part element="impl:consSueldoProfResponse" name="parameters">
@@ -69,19 +61,15 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    </wsdl:message>
 
+   <wsdl:message name="registrarSueldoProfResponse">
+
+      <wsdl:part element="impl:registrarSueldoProfResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
    <wsdl:portType name="ServicioSueldo">
-
-      <wsdl:operation name="registrarSueldoProf">
-
-         <wsdl:input message="impl:registrarSueldoProfRequest" name="registrarSueldoProfRequest">
-
-       </wsdl:input>
-
-         <wsdl:output message="impl:registrarSueldoProfResponse" name="registrarSueldoProfResponse">
-
-       </wsdl:output>
-
-      </wsdl:operation>
 
       <wsdl:operation name="consSueldoProf">
 
@@ -95,29 +83,23 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
+      <wsdl:operation name="registrarSueldoProf">
+
+         <wsdl:input message="impl:registrarSueldoProfRequest" name="registrarSueldoProfRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:registrarSueldoProfResponse" name="registrarSueldoProfResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
    </wsdl:portType>
 
    <wsdl:binding name="ServicioSueldoSoapBinding" type="impl:ServicioSueldo">
 
       <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
-
-      <wsdl:operation name="registrarSueldoProf">
-
-         <wsdlsoap:operation soapAction=""/>
-
-         <wsdl:input name="registrarSueldoProfRequest">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:input>
-
-         <wsdl:output name="registrarSueldoProfResponse">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:output>
-
-      </wsdl:operation>
 
       <wsdl:operation name="consSueldoProf">
 
@@ -130,6 +112,24 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
          </wsdl:input>
 
          <wsdl:output name="consSueldoProfResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="registrarSueldoProf">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="registrarSueldoProfRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="registrarSueldoProfResponse">
 
             <wsdlsoap:body use="literal"/>
 

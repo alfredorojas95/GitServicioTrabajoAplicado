@@ -40,7 +40,7 @@ public class ServicioCurso {
 	}
 	
 	/**
-	 * 
+	 * este método inscribe a un estudiante en un curso
 	 * @param idCurso
 	 * @param rutEstudiante
 	 * @param rutProf
@@ -48,5 +48,14 @@ public class ServicioCurso {
 	 */
 	public String inscribirEstudiantes(int idCurso, String rutEstudiante, String rutProf){
 		return Curso.inscribirEstudiantes(idCurso, rutEstudiante, rutProf);
+	}
+	
+	/**
+	 * este método entrega los datos de un curso entregado su código
+	 * @param id
+	 * @return
+	 */
+	public String[] buscarCurso(int id){
+		return Curso.buscarCurso(id);
 	}
 }

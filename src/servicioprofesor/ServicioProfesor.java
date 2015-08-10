@@ -31,4 +31,13 @@ public class ServicioProfesor {
 	public String registrarAsistencia(String rutEst, int idCurso, String notaS, String rutProf){
 		return Profesor.registrarAsistencia(rutEst, idCurso, notaS, rutProf);
 	}
+	
+	/**
+	 * este método busca a un profesor con su rut
+	 * @param rutProfe
+	 * @return
+	 */
+	public String[] buscarProfe(String rutProfe){
+		return Profesor.buscarProfesor(rutProfe);
+	}
 }

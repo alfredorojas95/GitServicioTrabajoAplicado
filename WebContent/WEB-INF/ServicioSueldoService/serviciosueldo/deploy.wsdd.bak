@@ -20,15 +20,15 @@
       <parameter name="className" value="serviciosueldo.ServicioSueldoSoapBindingImpl"/>
       <parameter name="wsdlPortType" value="ServicioSueldo"/>
       <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="consSueldoProf" qname="operNS:consSueldoProf" xmlns:operNS="http://serviciosueldo" returnQName="retNS:consSueldoProfReturn" xmlns:retNS="http://serviciosueldo" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:rutProf" xmlns:pns="http://serviciosueldo" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
       <operation name="registrarSueldoProf" qname="operNS:registrarSueldoProf" xmlns:operNS="http://serviciosueldo" returnQName="retNS:registrarSueldoProfReturn" xmlns:retNS="http://serviciosueldo" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
         <parameter qname="pns:rutProf" xmlns:pns="http://serviciosueldo" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
         <parameter qname="pns:rutAdm" xmlns:pns="http://serviciosueldo" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
         <parameter qname="pns:mes" xmlns:pns="http://serviciosueldo" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
       </operation>
-      <operation name="consSueldoProf" qname="operNS:consSueldoProf" xmlns:operNS="http://serviciosueldo" returnQName="retNS:consSueldoProfReturn" xmlns:retNS="http://serviciosueldo" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
-        <parameter qname="pns:rutProf" xmlns:pns="http://serviciosueldo" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
-      </operation>
-      <parameter name="allowedMethods" value="registrarSueldoProf consSueldoProf"/>
+      <parameter name="allowedMethods" value="consSueldoProf registrarSueldoProf"/>
 
   </service>
 </deployment>

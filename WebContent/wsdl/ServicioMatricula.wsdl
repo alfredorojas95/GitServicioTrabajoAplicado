@@ -4,16 +4,6 @@
 Built on Apr 22, 2006 (06:55:48 PDT)-->
  <wsdl:types>
   <schema elementFormDefault="qualified" targetNamespace="http://serviciomatricula" xmlns="http://www.w3.org/2001/XMLSchema">
-   <element name="obtenerListMorososMatricula">
-    <complexType/>
-   </element>
-   <element name="obtenerListMorososMatriculaResponse">
-    <complexType>
-     <sequence>
-      <element name="obtenerListMorososMatriculaReturn" type="xsd:string"/>
-     </sequence>
-    </complexType>
-   </element>
    <element name="pagarMatricula">
     <complexType>
      <sequence>
@@ -29,6 +19,16 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
      </sequence>
     </complexType>
    </element>
+   <element name="obtenerListMorososMatricula">
+    <complexType/>
+   </element>
+   <element name="obtenerListMorososMatriculaResponse">
+    <complexType>
+     <sequence>
+      <element name="obtenerListMorososMatriculaReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
   </schema>
  </wsdl:types>
 
@@ -40,17 +40,17 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    </wsdl:message>
 
-   <wsdl:message name="obtenerListMorososMatriculaResponse">
+   <wsdl:message name="pagarMatriculaRequest">
 
-      <wsdl:part element="impl:obtenerListMorososMatriculaResponse" name="parameters">
+      <wsdl:part element="impl:pagarMatricula" name="parameters">
 
       </wsdl:part>
 
    </wsdl:message>
 
-   <wsdl:message name="pagarMatriculaRequest">
+   <wsdl:message name="obtenerListMorososMatriculaResponse">
 
-      <wsdl:part element="impl:pagarMatricula" name="parameters">
+      <wsdl:part element="impl:obtenerListMorososMatriculaResponse" name="parameters">
 
       </wsdl:part>
 
@@ -66,18 +66,6 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    <wsdl:portType name="ServicioMatricula">
 
-      <wsdl:operation name="obtenerListMorososMatricula">
-
-         <wsdl:input message="impl:obtenerListMorososMatriculaRequest" name="obtenerListMorososMatriculaRequest">
-
-       </wsdl:input>
-
-         <wsdl:output message="impl:obtenerListMorososMatriculaResponse" name="obtenerListMorososMatriculaResponse">
-
-       </wsdl:output>
-
-      </wsdl:operation>
-
       <wsdl:operation name="pagarMatricula">
 
          <wsdl:input message="impl:pagarMatriculaRequest" name="pagarMatriculaRequest">
@@ -90,29 +78,23 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
+      <wsdl:operation name="obtenerListMorososMatricula">
+
+         <wsdl:input message="impl:obtenerListMorososMatriculaRequest" name="obtenerListMorososMatriculaRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:obtenerListMorososMatriculaResponse" name="obtenerListMorososMatriculaResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
    </wsdl:portType>
 
    <wsdl:binding name="ServicioMatriculaSoapBinding" type="impl:ServicioMatricula">
 
       <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
-
-      <wsdl:operation name="obtenerListMorososMatricula">
-
-         <wsdlsoap:operation soapAction=""/>
-
-         <wsdl:input name="obtenerListMorososMatriculaRequest">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:input>
-
-         <wsdl:output name="obtenerListMorososMatriculaResponse">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:output>
-
-      </wsdl:operation>
 
       <wsdl:operation name="pagarMatricula">
 
@@ -125,6 +107,24 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
          </wsdl:input>
 
          <wsdl:output name="pagarMatriculaResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="obtenerListMorososMatricula">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="obtenerListMorososMatriculaRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="obtenerListMorososMatriculaResponse">
 
             <wsdlsoap:body use="literal"/>
 

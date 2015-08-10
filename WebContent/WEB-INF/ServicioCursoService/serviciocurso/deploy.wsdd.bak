@@ -20,9 +20,8 @@
       <parameter name="className" value="serviciocurso.ServicioCursoSoapBindingImpl"/>
       <parameter name="wsdlPortType" value="ServicioCurso"/>
       <parameter name="typeMappingVersion" value="1.2"/>
-      <operation name="desactivarCurso" qname="operNS:desactivarCurso" xmlns:operNS="http://serviciocurso" returnQName="retNS:desactivarCursoReturn" xmlns:retNS="http://serviciocurso" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      <operation name="buscarCurso" qname="operNS:buscarCurso" xmlns:operNS="http://serviciocurso" returnQName="retNS:buscarCursoReturn" xmlns:retNS="http://serviciocurso" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
         <parameter qname="pns:id" xmlns:pns="http://serviciocurso" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
-        <parameter qname="pns:rutDirector" xmlns:pns="http://serviciocurso" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
       </operation>
       <operation name="crearCurso" qname="operNS:crearCurso" xmlns:operNS="http://serviciocurso" returnQName="retNS:crearCursoReturn" xmlns:retNS="http://serviciocurso" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
         <parameter qname="pns:nombreCurso" xmlns:pns="http://serviciocurso" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
@@ -33,12 +32,16 @@
         <parameter qname="pns:rutProfe" xmlns:pns="http://serviciocurso" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
         <parameter qname="pns:rutJefeAdm" xmlns:pns="http://serviciocurso" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
       </operation>
+      <operation name="desactivarCurso" qname="operNS:desactivarCurso" xmlns:operNS="http://serviciocurso" returnQName="retNS:desactivarCursoReturn" xmlns:retNS="http://serviciocurso" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:id" xmlns:pns="http://serviciocurso" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:rutDirector" xmlns:pns="http://serviciocurso" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
       <operation name="inscribirEstudiantes" qname="operNS:inscribirEstudiantes" xmlns:operNS="http://serviciocurso" returnQName="retNS:inscribirEstudiantesReturn" xmlns:retNS="http://serviciocurso" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
         <parameter qname="pns:idCurso" xmlns:pns="http://serviciocurso" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
         <parameter qname="pns:rutEstudiante" xmlns:pns="http://serviciocurso" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
         <parameter qname="pns:rutProf" xmlns:pns="http://serviciocurso" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
       </operation>
-      <parameter name="allowedMethods" value="asignarProfesor crearCurso inscribirEstudiantes desactivarCurso"/>
+      <parameter name="allowedMethods" value="asignarProfesor buscarCurso crearCurso inscribirEstudiantes desactivarCurso"/>
 
   </service>
 </deployment>
